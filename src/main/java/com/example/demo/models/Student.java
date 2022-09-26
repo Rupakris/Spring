@@ -5,12 +5,21 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
+import javax.persistence.*;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
+@Entity
+@Table(name = "students")
 public class Student {
+    @Id
+    @Column(name="id")
     int studentId;
-    String studentName;
-    String studentDept;
 
+    @Column(name="name")
+    String studentName;
+    @Column(name="dept")
+    String studentDept;
 }
+
